@@ -1,6 +1,3 @@
-# AppsFlyer SDK Integration Guide
-
-Welcome to the AppsFlyer SDK integration guide! Follow these steps to integrate the AppsFlyer SDK into your iOS project.
 
 ## Before You Start
 
