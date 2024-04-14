@@ -23,5 +23,5 @@ Before proceeding, ensure you have CocoaPods installed. Follow the tutorial [Ins
 4. **Build and Run:**
    - Build your project and run it.
 
-By following these steps, you'll integrate AppsFlyer SDK seamlessly into your iOS project.
+By following these steps, you'll integrate AppsFlyer SDK seamlessly into your Cocos project.
 
