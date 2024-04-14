@@ -1,14 +1,20 @@
 # AppsFlyerCocos
 
-1. download the typescript file and add it to your assets project folder
-2. link the script to the canvas
-3. change the dev-key, app-id (for ios app) and debug to yours preferences
-4. build your cocos-creator app
+Integrate AppsFlyer SDK with your Cocos Creator project using the following steps:
 
-for android:
-go to readme file for android
+1. **Download TypeScript File:**
+   - Download the TypeScript file and add it to your project's assets folder.
 
+2. **Link Script to Canvas:**
+   - Link the script to the Canvas in your Cocos Creator project.
 
-for ios:
-go to readme file for ios
+3. **Update Configuration:**
+   - Change the development key, app ID (for iOS app), and debug preferences to match yours.
 
+4. **Build Your Cocos Creator App:**
+   - Build your Cocos Creator app.
+
+For platform-specific instructions:
+
+- For Android, refer to the [README file for Android](#readme-file-for-android).
+- For iOS, refer to the [README file for iOS](#readme-file-for-ios).
