@@ -16,5 +16,5 @@ Integrate AppsFlyer SDK with your Cocos Creator project using the following step
 
 For platform-specific instructions:
 
-- For Android, refer to the [README file for Android](#readme-file-for-android).
-- For iOS, refer to the [README file for iOS](#readme-file-for-ios).
+- For Android, refer to the [README file for Android](ANDROID/README.md).
+- For iOS, refer to the [README file for iOS](IOS/README.md).
