@@ -16,9 +16,10 @@ export class NativeBridge extends Component {
                 if(arg0 == 'sendToJs'){
                     const str = this.sendToJs(arg1)
                     const obj = JSON.parse(str);
-                    console.log(obj);
+                    //console.log(obj);
+                    JSObjct = obj;
                     //Now we can use the conversion data here
-                    JSObjct = obj;   
+                    
                 }
                 return;
             }
