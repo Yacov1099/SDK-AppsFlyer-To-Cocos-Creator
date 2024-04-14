@@ -1,7 +1,8 @@
 
 ## Before You Start
 
-Before proceeding, ensure you have CocoaPods installed. Follow the tutorial [Install SDK Appsflyer](https://dev.appsflyer.com/hc/docs/install-ios-sdk) for guidance.
+1. Before proceeding, ensure you have CocoaPods installed.
+2. Follow the tutorial [Install SDK Appsflyer](https://dev.appsflyer.com/hc/docs/install-ios-sdk) for istall AppsFlyer SDK.
 
 ## Installation Steps
 
