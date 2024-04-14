@@ -1,8 +1,7 @@
-
 ## Before You Start
 
 1. Before proceeding, ensure you have CocoaPods installed.
-2. Follow the tutorial [Install SDK Appsflyer](https://dev.appsflyer.com/hc/docs/install-ios-sdk) for istall AppsFlyer SDK.
+2. Follow the [Install SDK Appsflyer](https://dev.appsflyer.com/hc/docs/install-ios-sdk) tutorial to install the AppsFlyer SDK.
 
 ## Installation Steps
 
@@ -10,7 +9,7 @@
    - Download the files `AppsFlyerCocos.h` and `AppsFlyerCocos.mm`.
 
 2. **Integrate with Xcode:**
-   - In Xcode, move the file `.mm` inside `Source Files` and the file `.h` inside `Header Files` within your project folder.
+   - In Xcode, move the file `.mm` inside the `Source Files` directory and the file `.h` inside the `Header Files` directory within your project folder.
 
 3. **Update AppDelegate:**
    - Open `AppDelegate` in your project folder.
@@ -24,5 +23,4 @@
 4. **Build and Run:**
    - Build your project and run it.
 
-By following these steps, you'll integrate AppsFlyer SDK seamlessly into your Cocos project.
-
+By following these steps, you'll seamlessly integrate the AppsFlyer SDK into your Cocos project.
