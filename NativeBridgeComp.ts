@@ -16,7 +16,6 @@ export class NativeBridge extends Component {
                 if(arg0 == 'sendToJs'){
                     const str = this.sendToJs(arg1)
                     const obj = JSON.parse(str);
-                    //console.log(obj);
                     JSObjct = obj;
                     //Now we can use the conversion data here
                     
@@ -34,21 +33,23 @@ export class NativeBridge extends Component {
                     const [key, value] = pair.split("=");
                     obj[key.trim()] = value.trim();
                 });
-                //console.log(obj);
                 JSObjct = obj; 
                 //Now we can use the conversion data here
 
-                // let labelNode = find("Canvas/green/Label");
-                // labelNode.getComponent(Label).string = JSON.stringify(obj);
+                // example for showing the data on the screen
+                // const labelNode = find("Canvas/some-node/Label");
+                /* labelNode.getComponent(Label).string = JSON.stringify(obj, null, 2)
+                .substring(1, JSON.stringify(obj, null, 2).length - 1);
+                */
             })
 }
         
     }
     start() {
-        if (!sys.isNative) return   
-        const devKey = "YOURDEVKEY"
-        const isDebug = true
-        const appleId = "IDAPPLE" //if you will use ios
+        if (!sys.isNative) return;
+        const devKey = "YourDevKey";
+        const isDebug = true; // choose your desire
+        const appleId = "IDAPPLE"; // if you will use ios
 
         let obj = {};
         if (sys.platform == sys.Platform.IOS){
