@@ -34,11 +34,12 @@ export class NativeBridge extends Component {
                     obj[key.trim()] = value.trim();
                 });
                 JSObjct = obj; 
-                //Now we can use the conversion data here
-
-                // example for showing the data on the screen
-                // const labelNode = find("Canvas/some-node/Label");
-                /* labelNode.getComponent(Label).string = JSON.stringify(obj, null, 2)
+                // Now we can use the conversion data
+                
+                /* 
+                example for showing the data on the screen
+                const labelNode = find("Canvas/some-node/Label");
+                labelNode.getComponent(Label).string = JSON.stringify(obj, null, 2)
                 .substring(1, JSON.stringify(obj, null, 2).length - 1);
                 */
             })
