@@ -8,10 +8,12 @@
 1. **Download Files:**
    - Download the files `AppsFlyerCocos.h` and `AppsFlyerCocos.mm`.
 
-2. **Integrate with Xcode:**
-   - In Xcode, move the file `.mm` inside the `Source Files` directory and the file `.h` inside the `Header Files` directory within your project folder.
+2. **Move to Your Project root:**
+   - Move files `.mm` and `.h` inside directory of project.
 
-3. **Update AppDelegate:**
+3.**Open .xworkspace:**
+     
+4.  **Update AppDelegate:**
    - Open `AppDelegate` in your project folder.
    - Import `AppsFlyerCocos.h` by adding `#import "AppsFlyerCocos.h"` at the top.
    - Within the `application` method, before the `return` statement, add the following lines:
@@ -20,7 +22,7 @@
      [appsFlyer start];
      ```
 
-4. **Build and Run:**
+5. **Build and Run:**
    - Build your project and run it.
 
 By following these steps, you'll seamlessly integrate the AppsFlyer SDK into your Cocos project.
