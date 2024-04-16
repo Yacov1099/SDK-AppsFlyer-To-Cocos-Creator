@@ -6,11 +6,7 @@
 //
 
 
-
-
 #import "AppsFlyerCocos.h"
-
-
 
 
 @implementation AppsFlyerCocos
@@ -19,16 +15,21 @@
     [AppsFlyerLib shared].delegate = self;
     
     static ICallback cb = ^void (NSString* _arg0, NSString* _arg1){
+        
         if ([_arg0 isEqual:@"startSDK"]){
+            
             @autoreleasepool {
                 NSString *jsonString = _arg1;
                 NSData *jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
                 NSError *error = nil;
+                
                 id jsonObject = [NSJSONSerialization JSONObjectWithData:jsonData options:kNilOptions error:&error];
+
                 if (error) {
                     NSLog(@"Error parsing JSON: %@", error);
                 } else {
                     if ([jsonObject isKindOfClass:[NSArray class]]) {
+                        
                         // The JSON is an array, so we cast jsonObject to an NSArray
                         NSArray *jsonArray = (NSArray *)jsonObject;
                         BOOL debugValue = [jsonArray[1] isEqualToNumber:@1];
@@ -36,9 +37,22 @@
                         [[AppsFlyerLib shared] setAppsFlyerDevKey:jsonArray[0]];
                         [[AppsFlyerLib shared] setAppleAppID:jsonArray[2]];
                         [[AppsFlyerLib shared] start];
+                    }else if ([jsonObject isKindOfClass:[NSDictionary class]]) {
+                        // Handle JSON dictionary
+                        NSDictionary *jsonDictionary = (NSDictionary *)jsonObject;
+                       
+                        NSString *devKey = jsonDictionary[@"devKey"];
+                        NSString *appleId = jsonDictionary[@"appleId"];
+                        NSNumber *debugValueNumber = jsonDictionary[@"isDebug"];
+                        BOOL debugValue = [debugValueNumber isEqualToNumber:@1];
+                            
+                        [AppsFlyerLib shared].isDebug = debugValue;
+                        [[AppsFlyerLib shared] setAppsFlyerDevKey:devKey];
+                        [[AppsFlyerLib shared] setAppleAppID:appleId];
+                        [[AppsFlyerLib shared] start];
                     } else {
                         // If jsonObject is not an NSArray, handle the error or unexpected type
-                        NSLog(@"Expected a JSON array but received a different type.");
+                        NSLog(@"Expected a JSON array or map but received a different type.");
                     }
                 }
             }
