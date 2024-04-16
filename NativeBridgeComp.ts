@@ -1,4 +1,4 @@
-import { _decorator, Component, Label, native, Node, sys, find } from 'cc';
+import { _decorator, Component, Label, native, sys, find } from 'cc';
 const { ccclass, property } = _decorator;
 
 @ccclass('NativeBridge')
