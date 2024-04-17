@@ -1,4 +1,4 @@
-import { _decorator, Component, Label, native, sys, find } from 'cc';
+import { _decorator, Component, Label, native, Node, sys, find } from 'cc';
 const { ccclass, property } = _decorator;
 
 @ccclass('NativeBridge')
@@ -16,9 +16,11 @@ export class NativeBridge extends Component {
                 if(arg0 == 'sendToJs'){
                     const str = this.sendToJs(arg1)
                     const obj = JSON.parse(str);
+                    //console.log(obj);
                     JSObjct = obj;
                     //Now we can use the conversion data here
-                    
+                    let labelNode = find("Canvas/conversion-bg/Label");
+                    labelNode.getComponent(Label).string = JSON.stringify(obj);                    
                 }
                 return;
             }
@@ -33,24 +35,22 @@ export class NativeBridge extends Component {
                     const [key, value] = pair.split("=");
                     obj[key.trim()] = value.trim();
                 });
+                //console.log(obj);
                 JSObjct = obj; 
-                // Now we can use the conversion data
-                
-                /* 
-                example for showing the data on the screen
-                const labelNode = find("Canvas/some-node/Label");
-                labelNode.getComponent(Label).string = JSON.stringify(obj, null, 2)
-                .substring(1, JSON.stringify(obj, null, 2).length - 1);
-                */
+                //Now we can use the conversion data here
+
+                // let labelNode = find("Canvas/green/Label");
+                // labelNode.getComponent(Label).string = JSON.stringify(obj);
             })
+            
 }
         
     }
     start() {
-        if (!sys.isNative) return;
-        const devKey = "YourDevKey";
-        const isDebug = true; // choose your desire
-        const appleId = "IDAPPLE"; // if you will use ios
+        if (!sys.isNative) return   
+        const devKey = "YOUR_DEVKEY"
+        const isDebug = true
+        const appleId = "YOUR_APPLE_ID" //if you will use ios
 
         let obj = {};
         if (sys.platform == sys.Platform.IOS){
@@ -58,7 +58,6 @@ export class NativeBridge extends Component {
                 devKey,
                 isDebug,
                 appleId
-
             }
             obj = objIOS;
         }else if (sys.platform == sys.Platform.ANDROID){
