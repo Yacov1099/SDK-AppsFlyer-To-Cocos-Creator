@@ -8,7 +8,7 @@
 1. **Download Files:**
    - Download the files `AppsFlyerCocos.h` and `AppsFlyerCocos.mm`.
 
-2. **Move to Your Project root:**
+2. **Move to files .mm and h.**
    - Move files `.mm` and `.h` inside directory of project.
    - Open .xworkspace.
      
