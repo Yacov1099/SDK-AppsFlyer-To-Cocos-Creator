@@ -15,7 +15,7 @@ Integrate AppsFlyer SDK with your Cocos Creator game using the following steps:
       - *Only IOS:* Make option "Skip th update of Xcode project"
       - Buid your project. 
 
-For platform-specific instructions:
+After build, you need fold platform-specific instructions:
 
 - For Android, refer to the [README file for Android](ANDROID/README.md).
 - For iOS, refer to the [README file for iOS](IOS/README.md).
