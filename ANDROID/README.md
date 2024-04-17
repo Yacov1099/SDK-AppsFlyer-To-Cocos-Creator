@@ -35,4 +35,3 @@ Follow these steps to integrate the AppsFlyer SDK into your Cocos game for Andro
    - Build the project in Android Studio.
    - Run the application.
 
-By following these steps, you'll integrate the AppsFlyer SDK seamlessly into your Cocos project for Android.
