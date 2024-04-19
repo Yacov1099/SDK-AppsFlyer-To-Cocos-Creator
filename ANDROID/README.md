@@ -3,7 +3,7 @@
 Follow these steps to integrate the AppsFlyer SDK into your Cocos game for Android devices:
 
 1. **Download and Add File:**
-   - Download the file and add it inside Android Studio to `C:\Users\yourUserName\yourProjectsFolder\yourProjectName\native\engine\android\app\src\com\cocos\game`.
+   - Download the file and add it inside Android Studio to `yourProjectName\native\engine\android\app\src\com\cocos\game`.
 
 2. **Update Manifest File:**
    - Go to your `AndroidManifest.xml` file inside your project.
