@@ -26,7 +26,7 @@ export class CallAppsFlyer extends Component {
         this.apc.loadBridge(setLabel);
         const devKey = MY_DEVKEY;
         const appleId = MY_APPLE_ID;
-        startSdk(devKey, appleId=null, isDebug=true) -> 
+        //startSdk(devKey, appleId=null, isDebug=true)
         this.apc.startSdk(devKey, appleId, true);
     
     }
