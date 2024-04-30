@@ -1,8 +1,9 @@
 # AppsFlyerCocos
 
-##Example:
-'tipescript
-import { _decorator, Component,find,Label, log } from 'cc';
+## Example:
+
+```typescript
+import { _decorator, Component, find, Label } from 'cc';
 import { AppsFlyerCocos } from './AppsFlyerCocos';
 import { MY_APPLE_ID, MY_DEVKEY } from './contants';
 const { ccclass ,property} = _decorator;
@@ -13,7 +14,7 @@ export class CallAppsFlyer extends Component {
     private obj: Object;
     private apc: AppsFlyerCocos = new AppsFlyerCocos();
 
-    protected  onLoad(): void {
+    protected onLoad(): void {
         
         const setLabel = (obj:Object | undefined ) => {
             let labelNode = find("Canvas/conversion-bg/Label");
@@ -31,7 +32,7 @@ export class CallAppsFlyer extends Component {
 }
 
 
-##How to Integrate
+## How to Integrate:
 
 1. **Download TypeScript File:**
    - Download the TypeScript file named "AppsFlyerCocos.ts" and add it to your project's assets folder.
