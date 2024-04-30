@@ -1,9 +1,41 @@
 # AppsFlyerCocos
 
-Integrate AppsFlyer SDK with your Cocos Creator game using the following steps:
+##Example:
+
+import { _decorator, Component,find,Label, log } from 'cc';
+import { AppsFlyerCocos } from './AppsFlyerCocos';
+import { MY_APPLE_ID, MY_DEVKEY } from './contants';
+const { ccclass ,property} = _decorator;
+
+'tipescript
+@ccclass('CallAppsFlyer')
+export class CallAppsFlyer extends Component {
+
+    private obj: Object;
+    private apc: AppsFlyerCocos = new AppsFlyerCocos();
+
+    protected  onLoad(): void {
+        
+        const setLabel = (obj:Object | undefined ) => {
+            let labelNode = find("Canvas/conversion-bg/Label");
+            labelNode.getComponent(Label).string = JSON.stringify(obj);
+            return obj
+        }
+
+        console.log(this.apc.loadBridge(setLabel));
+
+        const devKey = MY_DEVKEY;
+        const appleId = MY_APPLE_ID;
+        this.apc.startSdk(devKey, appleId, true);
+    
+    }
+}
+
+
+##How to Integrate
 
 1. **Download TypeScript File:**
-   - Download the TypeScript file named "NativeBridgeComp.ts" and add it to your project's assets folder.
+   - Download the TypeScript file named "AppsFlyerCocos.ts" and add it to your project's assets folder.
 
 2. **Link Script to Canvas:**
    - Link the script to the Canvas in your Cocos Creator game.
