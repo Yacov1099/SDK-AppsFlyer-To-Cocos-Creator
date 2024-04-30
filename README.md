@@ -22,6 +22,7 @@ export class CallAppsFlyer extends Component {
             return obj
         }
 
+        this.apc.loadBridge(setLabel);
         const devKey = MY_DEVKEY;
         const appleId = MY_APPLE_ID;
         this.apc.startSdk(devKey, appleId, true);
