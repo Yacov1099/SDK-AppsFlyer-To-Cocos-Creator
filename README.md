@@ -1,6 +1,6 @@
 # AppsFlyerCocos
 
-## Example:
+## Example of component CallAppsFlyer:
 
 ```typescript
 import { _decorator, Component, find, Label } from 'cc';
@@ -39,7 +39,7 @@ export class CallAppsFlyer extends Component {
    - Link the script to the Canvas in your Cocos Creator game.
 
 3. **Update Configuration:**
-   - Change the development key, app ID (for iOS app), and debug preferences to match yours.
+   - Set development key, app ID (for iOS app), and debug preferences.
 
 4. **Build Your Cocos Creator App:**
       - *Only IOS:* Make option "Skip the update of Xcode project"
