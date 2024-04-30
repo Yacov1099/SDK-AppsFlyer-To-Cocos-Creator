@@ -1,13 +1,12 @@
 # AppsFlyerCocos
 
 ##Example:
-
+'tipescript
 import { _decorator, Component,find,Label, log } from 'cc';
 import { AppsFlyerCocos } from './AppsFlyerCocos';
 import { MY_APPLE_ID, MY_DEVKEY } from './contants';
 const { ccclass ,property} = _decorator;
 
-'tipescript
 @ccclass('CallAppsFlyer')
 export class CallAppsFlyer extends Component {
 
