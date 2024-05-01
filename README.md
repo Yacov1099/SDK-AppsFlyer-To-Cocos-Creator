@@ -38,13 +38,10 @@ export class CallAppsFlyer extends Component {
 1. **Download TypeScript File:**
    - Download the TypeScript file named "AppsFlyerCocos.ts" and add it to your project's assets folder.
 
-2. **Link Script to Canvas:**
-   - Link the script to the Canvas in your Cocos Creator game.
+2. **Create you component:**
+   - Create a component with the example above and attach in your scene (We attached in Canvas, for example).
 
-3. **Update Configuration:**
-   - Set development key, app ID (for iOS app), and debug preferences.
-
-4. **Build Your Cocos Creator App:**
+3. **Build Your Cocos Creator App:**
       - *Only IOS:* Make option "Skip the update of Xcode project"
       - Buid your project. 
 
