@@ -62,10 +62,10 @@ public class AppsFlyerCocos {
             public void onConversionDataSuccess(Map<String, Object> map) {
 
                 JsbBridgeWrapper jbw = JsbBridgeWrapper.getInstance();
-                jbw.addScriptEventListener("requestLabelContent", arg -> {
+                jbw.addScriptEventListener("requestContent", arg -> {
                     System.out.println("@JAVA: registered the callback" + arg);
                 });
-                String mapAsString = map.toString().substring(1, map.size() - 1);
+                String mapAsString = map.toString().substring(1, map.toString().length()-1);
                 jbw.dispatchEventToScript("sendToJs", mapAsString);
             }
 
