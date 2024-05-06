@@ -25,7 +25,7 @@ export class AppsFlyerCocos{
     }
 
     private setupAndroidNativeBridge(callBack: CallBack): any {
-        native.jsbBridgeWrapper.dispatchEventToNative("requestLabelContent");
+        native.jsbBridgeWrapper.dispatchEventToNative("requestContent");
         native.jsbBridgeWrapper.addNativeEventListener("sendToJs", (content: string) => {
             const objStr = this.sendToJs(content);
             const keyValuePairs = objStr.split(", ");
