@@ -1,4 +1,4 @@
-//maybe will nedd to change package
+// You may need to rename the package
 package com.cocos.game;
 
 import android.content.Context;
@@ -19,7 +19,7 @@ import java.util.Map;
 public class AppsFlyerCocos {
     public static final String LOG_TAG = "AppsFlyerOneLinkSimApp";
 
-    //STARTING SDK
+    // Starting the SDK
     public void start(Context context) {
         JsbBridge.setCallback(new JsbBridge.ICallback() {
             @Override
@@ -27,7 +27,6 @@ public class AppsFlyerCocos {
                 if (arg0.equals("startSDK")) {
                     try {
                         JSONObject jsonObj = new JSONObject(arg1);
-
                         String devKey = jsonObj.getString("devKey");
                         boolean isDebug = jsonObj.getBoolean("isDebug");
                         AppsFlyerLib AppsFlyerInst = AppsFlyerLib.getInstance();
@@ -65,6 +64,7 @@ public class AppsFlyerCocos {
                 jbw.addScriptEventListener("requestContent", arg -> {
                     System.out.println("@JAVA: registered the callback" + arg);
                 });
+                // Sends conversion data to the typescript layer as a string
                 String mapAsString = map.toString().substring(1, map.toString().length()-1);
                 jbw.dispatchEventToScript("sendToJs", mapAsString);
             }
@@ -75,9 +75,7 @@ public class AppsFlyerCocos {
             }
 
             @Override
-            public void onAppOpenAttribution(Map<String, String> map) {
-
-            }
+            public void onAppOpenAttribution(Map<String, String> map) {}
 
             @Override
             public void onAttributionFailure(String s) {
