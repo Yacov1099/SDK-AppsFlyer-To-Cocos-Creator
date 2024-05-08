@@ -1,8 +1,6 @@
 import { _decorator, native, sys } from 'cc';
 
-interface CallBack {
-    (obj:Object, ...args:any[]):any 
-}
+type CallBack = (obj: Object, ...args: any[]) => any;
 
 export class AppsFlyerCocos{
     
@@ -28,6 +26,7 @@ export class AppsFlyerCocos{
         native.jsbBridgeWrapper.dispatchEventToNative("requestContent");
         native.jsbBridgeWrapper.addNativeEventListener("sendToJs", (content: string) => {
             const objStr = this.sendToJs(content);
+            // Converts the received string to proper JSON format
             const keyValuePairs = objStr.split(", ");
             const obj = {};
             keyValuePairs.forEach(pair => {
@@ -38,7 +37,7 @@ export class AppsFlyerCocos{
         });
     }
 
-    public  loadBridge(callBack: CallBack): any{
+    public loadBridge(callBack: CallBack): any {
         if (!sys.isNative) return;
         if (sys.platform === sys.Platform.IOS) {
             return this.setupIOSNativeBridge(callBack);
@@ -50,18 +49,12 @@ export class AppsFlyerCocos{
 
     public startSdk(devKey:String, appleId:String|null,isDebug=false,): void {
         if (!sys.isNative) return;
-        let obj = {};
+        let obj = obj = {
+                    devKey,
+                    isDebug
+                 };
         if (sys.platform === sys.Platform.IOS) {
-            obj = {
-                devKey,
-                isDebug,
-                appleId
-            };
-        } else if (sys.platform === sys.Platform.ANDROID) {
-            obj = {
-                devKey,
-                isDebug
-            };
+            obj.appleId = appleId;
         }
         native.bridge.sendToNative('startSDK', JSON.stringify(obj));
     }
