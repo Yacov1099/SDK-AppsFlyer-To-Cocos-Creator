@@ -8,7 +8,7 @@
    - Download [`AppsFlyerCocos.h`](AppsFlyerCocos.h),[`AppsFlyerCocos.mm`](AppsFlyerCocos.mm),[`AppsFlyerInit.mm`](AppsFlyerInit.mm) and [`AppsFlyerInit.h`](AppsFlyerInit.h).
 
 2. **Move Files:**
-   - Move `.mm`s and `.h`s files to `/Your_project/native/engine/ios/` directory.
+   - Move `.mm` and `.h` files to `/Your_project/native/engine/ios/` directory.
 
 3. **Update and Open Project:**
    - Navigate to `/Your_project/build/ios/proj/`.
