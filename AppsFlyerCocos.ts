@@ -24,24 +24,37 @@ export class AppsFlyerCocos extends Component{
     private content: Object | null
 
     
-    private convertJavaToObj(javaStr: String){
-        const keyValuePairs = javaStr.split(", ");
-            const content = {};
-            keyValuePairs.forEach(pair => {
-                const [key, value] = pair.split("=");
-                content[key?.trim()] = value?.trim();
-            });
-            return content
+    private convertJavaToObj(javaStr: string) {
+       
+        
+        const keyValuePairs = javaStr.slice(1, -1).split(", ");
+        const content: Record<string, string> = {};
+    
+        keyValuePairs.forEach(pair => {
+            const [key, value] = pair.split("=");
+            if (key && value) {
+                content[key.trim()] = value.trim();
+            }
+        });
+    
+        return content;
     }
+    
+    
     
     private sendToNative(arg0: onNative, arg1: Object){
         return new native.bridge.sendToNative(arg0, JSON.stringify(arg1));
     }
 
-    private nativeBridge(callBack?: CallBack | null){
+    private nativeBridge(callBack?:(content: Record<string, string>) => void | null){
         try {
             native.bridge.onNative = (arg0: string, arg1: string): any => {
-                const content = sys.OS.IOS?JSON.parse(arg1):this.convertJavaToObj(arg1);
+                console.log("ARG1 - "+ arg1);
+                let content = {};
+                if (sys.os === sys.OS.IOS) {
+                    content = JSON.parse(arg1)
+                }else content = this.convertJavaToObj(arg1);
+
                 if (arg0 === 'send_data_to_script') {
                     if  (callBack) return callBack(content);
                 }
@@ -60,9 +73,9 @@ export class AppsFlyerCocos extends Component{
         if (!sys.isNative) return;
         if (sys.os === sys.OS.IOS){
             native.reflection.callStaticMethod("AppsFlyerInit", "init");
-        }else if (sys.os === sys.OS.ANDROID){
-            native.reflection.callStaticMethod("AppsFlyerInit", "init","()V");
-        }
+        }else {
+            native.reflection.callStaticMethod("com/cocos/game/AppsFlyerCocos", "bridge", "()V");
+        } 
         this.nativeBridge(callBack);      
     }
 
@@ -90,6 +103,6 @@ export class AppsFlyerCocos extends Component{
             event_parameters
         }
         this.sendToNative('sentEvents', this.content);
-    }
+    }
 
 }
