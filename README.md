@@ -49,7 +49,7 @@ After build, you need fold platform-specific instructions:
 - For Android, refer to the [README file for Android](ANDROID/README.md).
 - For iOS, refer to the [README file for iOS](IOS/README.md).
 
-## Example of use EventLog (alpha)
+## Example of use logEvents (alpha)
 ```typescript
 import { _decorator, Button, Component, Node } from 'cc';
 const { ccclass, property } = _decorator;
