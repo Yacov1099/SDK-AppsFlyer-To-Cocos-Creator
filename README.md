@@ -19,10 +19,9 @@ export class CallAppsFlyer extends Component {
         const setLabel = (obj:Object | undefined ) => {
             let labelNode = find("Canvas/conversion-bg/Label");
             labelNode.getComponent(Label).string = JSON.stringify(obj);
-            //return obj
         }
 
-        //loadBridge(callback) -> Callback need receive obj as parameter.
+        //loadBridge(callback?) -> Can or not receive Callback, but need receive obj as parameter, because the obj is data-conversion.
         this.apc.loadBridge(setLabel);
         const devKey = MY_DEVKEY;
         const appleId = MY_APPLE_ID;
