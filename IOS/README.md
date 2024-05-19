@@ -5,7 +5,7 @@
 ## Installation Steps
 
 1. **Download Files:**
-   - Download [`AppsFlyerCocos.h`](AppsFlyerCocos.h) and [`AppsFlyerCocos.mm`](AppsFlyerCocos.mm).
+   - Download [`AppsFlyerCocos.h`](AppsFlyerCocos.h),[`AppsFlyerCocos.mm`](AppsFlyerCocos.mm),[`AppsFlyerInit.mm`](AppsFlyerInit.mm) and [`AppsFlyerInit.h`](AppsFlyerInit.h).
 
 2. **Move Files:**
    - Move `.mm` and `.h` files to `/Your_project/native/engine/ios/` directory.
