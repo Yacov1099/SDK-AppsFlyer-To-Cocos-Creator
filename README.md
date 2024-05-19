@@ -48,3 +48,31 @@ After build, you need fold platform-specific instructions:
 
 - For Android, refer to the [README file for Android](ANDROID/README.md).
 - For iOS, refer to the [README file for iOS](IOS/README.md).
+
+## Example of use EventLog (alpha)
+```typescript
+import { _decorator, Button, Component, Node } from 'cc';
+const { ccclass, property } = _decorator;
+import { AppsFlyerCocos, event_parameter,  events} from './AppsFlyerCocos';
+@ccclass('Btn')
+export class Btn extends Component {
+    private apc: AppsFlyerCocos = new AppsFlyerCocos();
+    @property(Button)
+    button: Button | null = null;
+    onLoad () {
+        this.button.node.on(Button.EventType.CLICK, this.callback, this);
+    }
+   
+    callback (button: Button) {
+        const e = [
+            {
+                key: event_parameter.CONTENT_ID,
+                value: "Banana" 
+            }
+        ]
+            this.apc.logEvents( events.ADD_TO_CART, e);
+        }
+
+    }
+
+```
