@@ -19,19 +19,12 @@ Follow these steps to integrate the AppsFlyer SDK into your Cocos game for Andro
      implementation 'com.appsflyer:af-android-sdk:6.13.0' //or latest version
      implementation 'androidx.annotation:annotation-jvm:1.7.1'
      ```
-
+     
 4. **Sync Project with Gradle Files:**
    - Open Android Studio.
    - Click on "Sync Project with Gradle Files" in the toolbar.
 
-5. **Update appActivity.java:**
-   - Add the following lines in `appActivity.java` file at the end of `onStart` method:
-     ```java
-     AppsFlyerCocos afc = new AppsFlyerCocos();
-     afc.start(this);
-     ```
-
-6. **Build and Run:**
+5. **Build and Run:**
    - Build the project in Android Studio.
    - Run the application.
 
