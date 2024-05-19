@@ -8,7 +8,7 @@
    - Download [`AppsFlyerCocos.h`](AppsFlyerCocos.h),[`AppsFlyerCocos.mm`](AppsFlyerCocos.mm),[`AppsFlyerInit.mm`](AppsFlyerInit.mm) and [`AppsFlyerInit.h`](AppsFlyerInit.h).
 
 2. **Move Files:**
-   - Move `.mm` and `.h` files to `/Your_project/native/engine/ios/` directory.
+   - Move `.mm`s and `.h`s files to `/Your_project/native/engine/ios/` directory.
 
 3. **Update and Open Project:**
    - Navigate to `/Your_project/build/ios/proj/`.
@@ -19,13 +19,7 @@
 4. **Update Your Project:**
    - In `.xworkspace`, find the "Your_project-mobile" directory.
    - Inside "Source Files" and "Header Files", right-click and select "Add files 'Your_project'".
-   - Add `.mm` file to "Source Files" and `.h` file to "Header Files".
-   - In `AppDelegate.mm`, import `AppsFlyerCocos.h` by adding `#import "AppsFlyerCocos.h"` at the top.
-   - Within the `application` method in `AppDelegate.mm`, before the `return` statement, add:
-     ```objective-c
-     AppsFlyerCocos *appsFlyer = [[AppsFlyerCocos alloc] init];
-     [appsFlyer start];
-     ```
-
+   - Add `.mm` files to "Source Files" and `.h` files to "Header Files".
+   
 5. **Build and Run:**
    - Build and run your project.
