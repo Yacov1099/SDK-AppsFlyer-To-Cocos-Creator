@@ -1,5 +1,3 @@
-# AppsFlyerCocos
-
 ## Example of component CallAppsFlyer:
 
 ```typescript
