@@ -53,7 +53,7 @@ After build, you need fold platform-specific instructions:
 ```typescript
 import { _decorator, Button, Component, Node } from 'cc';
 const { ccclass, property } = _decorator;
-import { AppsFlyerCocos, event_parameter,  events} from './AppsFlyerCocos';
+import { AppsFlyerCocos, event_parameter,  event} from './AppsFlyerCocos';
 @ccclass('Btn')
 export class Btn extends Component {
     private apc: AppsFlyerCocos = new AppsFlyerCocos();
@@ -70,7 +70,7 @@ export class Btn extends Component {
                 value: "Banana" 
             }
         ]
-            this.apc.logEvents( events.ADD_TO_CART, e);
+            this.apc.logEvents( event.ADD_TO_CART, e);
         }
 
     }
